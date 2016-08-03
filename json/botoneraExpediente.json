@@ -1,0 +1,58 @@
+{
+  "botonera": {
+    "tabs": {
+      "tabBuzonDeTareas": "Buz&oacute;n de Tareas",
+      "tabBuzonGrupal": "Buz&oacute;n Grupal",
+      "tabActividades": "Actividades",
+      "tabTareasSupervisados": "Tareas Supervisados"
+    },
+    "tabDocumento": {
+      "VincularDocumento": "VincularDocumento.png",
+      "Subsanar_documento": "Subsanar_documento.png",
+      "RealizarPaseParalelo": "RealizarPaseParalelo.png",
+      "IniciarDocumentoGedo": "IniciarDocumentoGedo.png",
+      "NotificarTAD": "NotificarTAD.png"
+    },
+    "tabDocumentosDeTrabajo": {
+      "ArchivosDeTrabajo": "ArchivosDeTrabajo.png"
+    },
+    "tabAsociarExpediente": {
+      "BuscarExpediente": "BuscarExpediente.png",
+      "asociarexpedientes": "Asociar Expediente",
+      "Asociar Exp.": "Asociar Exp.",
+      "Desasociar": "Desasociar"
+    },
+    "tabTramitacionConjunta": {
+      "BuscarExpediente": "BuscarExpediente.png",
+      "tramitacionConjunta": "Tramitaci&oacute;n Conjunta",
+      "ConfirmarTramitacionConjunta": "ConfirmarTramitacionConjunta.png",
+      "DesvincularTramitacionConjunta": "DesvincularTramitacionConjunta.png"
+    },
+    "tabFusion": {
+      "BuscarExpediente": "BuscarExpediente.png",
+      "fusion": "Fusi&oacute;n",
+      "ConfirmarFusion": "ConfirmarFusion.png"
+    },
+    "tabHistorialDePases": {
+    },
+    "tabDatosDeLaCaratula": {
+      "Modificar": "Modificar.png",
+      "Guardar": "Guardar.png",
+      "BotonCancelar": "BotonCancelar.png",
+      "DatosPropiosDelExpediente": "DatosPropiosDelExpediente.png"
+    },
+    "transversal": {
+      "SalirSinPase": "SalirSinPase.png",
+      "RealizarPase": "RealizarPase.png",
+      "RealizarPaseParalelo": "RealizarPaseParalelo.png",
+      "reservar": "reservar.png",
+      "GenerarCopia": "GenerarCopia.png",
+      "NotificarExpedienteTAD": "NotificarExpedienteTAD.png",
+      "Cancelar": "Cancelar.png"
+    },
+    "botonesInternos": {
+      "Ejecutar": "Ejecutar.png",
+      "Cerrar": "Cerrar.png"
+    }  
+  }
+}

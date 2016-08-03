@@ -1,0 +1,60 @@
+{
+  "expediente": {
+    "trata": "DIGITAL",
+    "motivoInterno": "Motivo interno: Generaci&oacute;n automatizada",
+    "motivoExterno": "Motivo externo: Generaci&oacute;n automatizada",
+    "descAdicional": "Generaci&oacute;n automatizada",
+    "ffcc": { "0": "198ABC" },
+    "pase": {
+      "usuarioDestino": "Carlos Carlos",
+      "sectorDestino": {
+        "reparticion": "RUBI",
+        "sector": "RUBI"
+      },
+      "mesaDeLaReparticion": "CHARLY"
+    },
+    "usuariosDestinoParalelo": [
+      "Carlos Carlos",
+      "Marina Villa"
+    ],
+    "sectoresDestinoParalelo": [
+        {
+          "reparticion": "RUBI",
+          "sector": "RUBI"
+        },
+        {
+          "reparticion": "RUBI",
+          "sector": "RUBI"
+        }
+      ],
+    "documentos": {
+      "numeroSADE": [
+        "DI-2016-00112928-   -DGDYPC",
+        "IF-2016-00009614-   -DGAYDRH",
+        "IF-2016-00080598-   -CHARLY"
+      ],
+      "numeroEspecial": [
+        "RESFO-2016-4-DGTALMDE",
+        "SEAIT-2016-1-CHARLY"
+      ]
+    },
+    "asociarExpediente": {
+      "numeroExpediente": [
+        "EX-2016-00009578-   -MGEYA-DGAYDRH",
+        "EX-2016-00112704-   -MGEYA-CHARLY"
+      ]
+    },
+    "tramitacionConjunta": {
+      "numeroExpediente": [
+        "EX-2016-00090812-   -MGEYA-CHARLY",
+        "EX-2016-00090670-   -MGEYA-CHARLY"
+      ]
+    },
+    "fusion": {
+      "numeroExpediente": [
+        "EX-2016-00116817-   -MGEYA-CHARLY",
+        "EX-2016-00116819-  -MGEYA-CHARLY"
+      ]
+    }
+  }
+}
