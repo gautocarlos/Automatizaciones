@@ -20,10 +20,7 @@
       datosGEDO = archivoDatosGEDO.read
       datosGEDOParseo = JSON.parse(datosGEDO)
       self.setTextoLibre(datosGEDOParseo["documentoGEDO"]["textoLibre"])
-      self.parseJSONGenerico(datosGEDOParseo)
-      #self.setAcronimo(datosGEDOParseo["documentoGEDO"]["acronimo"])
-      #self.setReferencia(datosGEDOParseo["documentoGEDO"]["referencia"])
-      #datosGEDOParseo = super.parseJSON()      
+      self.parseJSONGenerico(datosGEDOParseo)    
     end
     #def producirDocumento(referencia, textoLibre)
     def producirDocumento()
@@ -42,7 +39,6 @@
       # Completa todos los campos que existen
       #indice = 0
       claseCampoTextoZ = 'z-textbox'
-      # cajasDeTexto = self.getBrowser().text_fields(:class => claseCampoTextoZ) # ORIGINAL
       cajasDeTexto = self.getElementosHTMLFactory().getElemento('input').obtenerInputsPorClase(claseCampoTextoZ)
       cajasDeTexto.each do |cajaDeTexto|
         if cajaDeTexto.visible?

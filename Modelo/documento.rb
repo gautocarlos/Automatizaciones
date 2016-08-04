@@ -214,7 +214,6 @@
     def parsearBotonesInciarProduccionDocumento()
       #Obtener todas imagenes del popup "Iniciar Producción de Documento"
       claseDIV = 'z-window-highlighted-cl'
-      #botonesImagenes = self.getBrowser().div(:class => 'z-window-highlighted-cl').images # ORIGINAL
       botonesImagenes = self.getElementosHTMLFactory().getElemento('div').obtenerImagenesPorClase(claseDIV)
       botonesImagenes.each do |imagen|
         rutaImagenSplit = imagen.src.split('/')
@@ -316,7 +315,8 @@
       #Obtener todas imagenes del popup "Iniciar Producción de Documento"
       #PRESIONA EL BOTÓN - 'ProducirloYoMismo.png'
       claseDIV = 'z-window-highlighted-cl'
-      botonesImagenes = getBrowser().div(:class => claseDIV).images
+      #botonesImagenes = getBrowser().div(:class => claseDIV).images # ORIGINAL
+      botonesImagenes = self.getElementosHTMLFactory().getElemento('div').obtenerImagenesPorClase(claseDIV)
       botonesImagenes.each do |imagen|
         rutaImagenSplit = imagen.src.split('/')
         nombreImagen = rutaImagenSplit[rutaImagenSplit.length - 1]
