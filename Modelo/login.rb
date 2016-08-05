@@ -37,14 +37,25 @@
       datosConf = archivoDatosConf.read
       datosLoginParseo = JSON.parse(datosConf)
       puts datosLoginParseo
-      #       
       self.setUsuario(datosLoginParseo["login"]["usuario"]["nombreUsuario"])
       self.setPassword(datosLoginParseo["login"]["usuario"]["password"])
-      if (self.getModulo() == "GEDO")
-        self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaGEDO"])
-      end
-      if (self.getModulo() == "EE")
-        self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaEE"])
+      #-------------#
+      #if (self.getModulo() == "GEDO")
+      #  self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaGEDO"])
+      #end
+      #if (self.getModulo() == "EE")
+      #  self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaEE"])
+      #end
+      #-------------#
+      case self.getModulo()
+        when 'EE'
+          self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaEE"])
+        when 'EU'
+          self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaEU"])
+        when 'GEDO'
+          self.setUrlModulo(datosLoginParseo["configuraciones"]["urls"]["rutaGEDO"])
+        else
+          return nil
       end
     end
     # Getters

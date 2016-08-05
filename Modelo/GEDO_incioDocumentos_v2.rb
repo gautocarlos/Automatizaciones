@@ -13,7 +13,7 @@
   require './documentoImportado.rb'
   require './documentoImportadoTemplate.rb'
   #Recibe por parámetro la ruta del archivo de configuración y el módulo al cual ingresar
-  login = Login.new("C:/Users/cargauto/Documents/GitHub/AutomatizacionesGEDO/json/configuraciones.json","GEDO")
+  login = Login.new("../conf/configuraciones.json","GEDO")
   login.ingresar()
   browser = login.getBrowser()
   ## ImportadoTemplate con Embebido
