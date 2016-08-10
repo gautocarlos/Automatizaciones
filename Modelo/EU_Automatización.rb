@@ -11,3 +11,5 @@
   sistema = "EU"
   eu.ingresoSistema(rutaArchivoConfiguracion, sistema)
   eu.presionarTabAdministracion()
+  eu.presionarAltaUsuario()
+  eu.completarDatosUsuario()

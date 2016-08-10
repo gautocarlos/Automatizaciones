@@ -15,6 +15,7 @@
   require './elementoLink.rb'  
   require './elementoSPAN.rb'
   require './elementoTD.rb'
+  require './elementoTBODY.rb'
   #
   class ElementosHTMLFactory
     attr_accessor
@@ -63,6 +64,8 @@
           return ElementoSPAN.new(browser)
         when 'td'
           return ElementoTD.new(browser)
+        when 'tbody'
+          return ElementoTBODY.new(browser)
         else
           return nil
       end

@@ -7,6 +7,7 @@
   class ElementosHTML
     attr_accessor
       :browser
+      :siMismo
     # Contructor
     def initialize(browser)
       self.setBrowser(browser)
@@ -15,9 +16,15 @@
     def getBrowser()
       return @browser
     end
+    def getSiMismo()
+      return @siMismo
+    end
     # Setters
     def setBrowser(browser)
       @browser = browser
+    end
+    def setSiMismo(siMismo)
+      @siMismo = siMismo
     end
     # Métodos
     def realizarClick(clase)

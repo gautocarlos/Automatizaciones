@@ -6,12 +6,14 @@
   require './elementosHTML.rb'
   require './login.rb'
   require './elementosHTMLFactory.rb'
+  require './Configuracion.rb'
   #require '../constantes.rb'
   class Aplicativo
     attr_accessor
       :browser
       :elementosHTMLFactory
       :coder
+      :configuracion
     # Getters
     def getBrowser()
       return @browser
@@ -21,6 +23,9 @@
     end
     def getCoder()
       return @coder
+    end
+    def getConfiguracion()
+      return @configuracion
     end
     # Setters
     def setBrowser(browser)
@@ -32,9 +37,15 @@
     def setCoder(coder)
       @coder = coder
     end
+    def setConfiguracion(configuracion)
+      @configuracion = configuracion
+    end
     # Métodos
     # Ingreso a un módulo
     def ingresoSistema(rutaArchivoConfiguracion, sistema)
+      # Se setea el archivo de configuracion de la aplicación
+      self.setConfiguracion(Configuracion.new(rutaArchivoConfiguracion)
+      # Al contar con un nuevo objeto que gentiona la configuración habría que reformular la clase Login
       login = Login.new(rutaArchivoConfiguracion, sistema)
       login.ingresar()
       browser = login.getBrowser()

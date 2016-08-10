@@ -14,7 +14,15 @@
     def completarTexto(texto, posicion, clase)
       Watir::Wait.until { self.getBrowser().text_fields(:class => clase)[posicion].exists?}
       self.getBrowser().text_fields(:class => clase)[posicion].set texto
-      self.getBrowser().text_fields(:class => 'z-textbox')[posicion].fire_event :blur
+      self.getBrowser().text_fields(:class => clase)[posicion].fire_event :blur
+    end
+    #
+    def esperarCompletarTextoDelista(texto, posicion, lista)
+      Watir::Wait.until { lista[posicion].exists?}
+      puts "esperarCompletarTextoDelista(texto, posicion, lista)"
+      lista[posicion].set texto
+      lista[posicion].fire_event :blur
+      puts "esperarCompletarTextoDelista(texto, posicion, lista)"
     end
     #Espera a que se cargue el componente
     def esperarComponente(posicion, clase)

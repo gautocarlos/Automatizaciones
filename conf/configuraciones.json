@@ -10,12 +10,12 @@
     "rutas": {
       "rutaScreenshots": "C:/Users/cargauto/WatirOutput/Screenshots/",
       "rutaLogs": "C:/Users/cargauto/WatirOutput/Logs/",
-      "rutaJSON": "C:/Users/cargauto/Documents/GitHub/AutomatizacionesGEDO/json/"
+      "rutaJSON": "C:/Users/cargauto/Documents/GitHub/Automatizaciones/Automatizaciones/json/"
     },
     "urls": {
       "rutaGEDO": "http://gedo-test.gcaba.everis.int/gedo-web/",
       "rutaEE": "http://ee-test.gcaba.everis.int/expedientes-web/",
-      "rutaEU": "http://eu-test-nodo2.gcaba.everis.int/eu-web/"
+      "rutaEU": "http://eu-test.gcaba.everis.int/eu-web/"
     }
   }
 }
