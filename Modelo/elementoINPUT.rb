@@ -18,11 +18,17 @@
     end
     #
     def esperarCompletarTextoDelista(texto, posicion, lista)
-      Watir::Wait.until { lista[posicion].exists?}
-      puts "esperarCompletarTextoDelista(texto, posicion, lista)"
-      lista[posicion].set texto
-      lista[posicion].fire_event :blur
-      puts "esperarCompletarTextoDelista(texto, posicion, lista)"
+      begin
+        Watir::Wait.until { lista[posicion].exists?}
+      #puts "texto :: #{texto}"
+      #puts "posicion :: #{posicion}"
+      #puts "lista :: #{lista}"
+        lista[posicion].set texto
+        lista[posicion].fire_event :blur
+      rescue
+        puts "Error en: esperarCompletarTextoDelista(texto, posicion, lista) - Elemento no visible o no existente."
+      end
+      #puts "esperarCompletarTextoDelista(texto, posicion, lista)"
     end
     #Espera a que se cargue el componente
     def esperarComponente(posicion, clase)

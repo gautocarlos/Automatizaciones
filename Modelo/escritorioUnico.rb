@@ -48,7 +48,9 @@
     # 3 = Nombre de usuario
     # 4 = Mail
     # 5 = Legajo
-    def completarDatosUsuario()
+    # Se recibe el parámetro: posicion, con el motivo de en el eventual caso de recibir una lista de usuarios
+    # En cada iteración de la invocación de este método se puedan procesar diferentes datos de alta
+    def completarDatosUsuario(posicion)
       claseTbody = Z_ROWS
       claseInputsSimples = Z_TEXTBOX
       claseBanbox = Z_TEXTBOX
@@ -58,8 +60,28 @@
       tbody.esperarObtenerElemento(claseTbody, posicionTbody)
       listaInputsZ_textbox = tbody.retornarElementosInputContenidos(claseInputsSimples)
       inputsBandbox = tbody.retornarElementosInputContenidos(claseBanbox)
-      texto = 'texto'
-      posicionInput = 1
-      self.getElementosHTMLFactory().getElemento('input').esperarCompletarTextoDelista(texto, posicionInput, listaInputsZ_textbox)
+      self.completarDatosUsuarioDesdeJson(posicion, listaInputsZ_textbox)
+    end
+    #
+    def completarDatosUsuarioDesdeJson(posicion, listaInputs)
+      #texto = 'texto'
+      #posicionInput = 1
+      # ANALIZAR EN QUE MOMENTO SE SETEA EL JSON DE DATOS DE USUARIO
+      jsonAltaUsuario = self.getParserArchivosJson().getInputsAltaUsuarioJson(posicion)
+      # Iterar los valores del json
+      posicionCampo = 1
+      indiceElemento = 0 # Indice valor del campo
+      jsonAltaUsuario.each do |datosUsuario|
+        puts "---------------------------------------------------"
+        puts "datosUsuario.size() :: #{datosUsuario.size()}"
+        puts "---------------------------------------------------"
+        puts "datosUsuario[posicionCampo] :: #{datosUsuario[posicionCampo]}"
+        puts "---------------------------------------------------"
+        puts "datosUsuario :: #{datosUsuario}"
+        puts "---------------------------------------------------"
+        #self.getElementosHTMLFactory().getElemento('input').esperarCompletarTextoDelista(datosUsuario[indiceElemento], posicionCampo, listaInputs)
+        self.getElementosHTMLFactory().getElemento('input').esperarCompletarTextoDelista(datosUsuario, posicionCampo, listaInputs)
+        posicionCampo = posicionCampo + 1
+      end      
     end
   end

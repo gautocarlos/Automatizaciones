@@ -7,6 +7,7 @@
   require './login.rb'
   require './elementosHTMLFactory.rb'
   require './Configuracion.rb'
+  require './ParserArchivosJson.rb'
   #require '../constantes.rb'
   class Aplicativo
     attr_accessor
@@ -14,6 +15,7 @@
       :elementosHTMLFactory
       :coder
       :configuracion
+      :parserArchivosJson
     # Getters
     def getBrowser()
       return @browser
@@ -26,6 +28,9 @@
     end
     def getConfiguracion()
       return @configuracion
+    end    
+    def getParserArchivosJson()
+      return @parserArchivosJson
     end
     # Setters
     def setBrowser(browser)
@@ -40,12 +45,18 @@
     def setConfiguracion(configuracion)
       @configuracion = configuracion
     end
+    def setParserArchivosJson(parserArchivosJson)
+      @parserArchivosJson = parserArchivosJson
+    end
     # Métodos
     # Ingreso a un módulo
     def ingresoSistema(rutaArchivoConfiguracion, sistema)
       # Se setea el archivo de configuracion de la aplicación
-      self.setConfiguracion(Configuracion.new(rutaArchivoConfiguracion)
-      # Al contar con un nuevo objeto que gentiona la configuración habría que reformular la clase Login
+      self.setConfiguracion(Configuracion.new(rutaArchivoConfiguracion))
+      configuracion = self.getConfiguracion()
+      parser = ParserArchivosJson.new(configuracion)
+      self.setParserArchivosJson(parser)
+      # TO DO - Al contar con un nuevo objeto que gentiona la configuración habría que reformular la clase Login
       login = Login.new(rutaArchivoConfiguracion, sistema)
       login.ingresar()
       browser = login.getBrowser()

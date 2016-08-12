@@ -1,12 +1,46 @@
-{
-"usuario": {
-  "1": "Nombre Automatizado",
-  "2": "Apellido Automatizado",
-  "3": "AUTOMATIZADOA",
-  "4": "carlos.alberto.gauto@everis.com",
-  "5": "125689",
-  "6": "RUBIEE",
-  "7": "RUBIEE",
-  "8": "Asesor"
- }
+{  
+   "usuario":[  
+      {  
+         "inputs":[  
+            "ANombre Automatizado",
+            "AApellido Automatizado",
+            "AUTOMATIZADOA",
+            "carlos.alberto.gauto@everis.com",
+            "125689"
+         ],
+         "bandboxes":[  
+            "RUBIEE",
+            "RUBIEE",
+            "Asesor"
+         ]
+      },
+      {  
+         "inputs":[  
+            "BNombre Automatizado",
+            "BApellido Automatizado",
+            "AUTOMATIZADOB",
+            "carlos.alberto.gauto@everis.com",
+            "125689"
+         ],
+         "bandboxes":[  
+            "RUBIEE",
+            "RUBIEE",
+            "Auditor"
+         ]
+      },
+      {  
+         "inputs":[  
+            "CNombre Automatizado",
+            "CApellido Automatizado",
+            "AUTOMATIZADOC",
+            "carlos.alberto.gauto@everis.com",
+            "125689"
+         ],
+         "bandboxes":[  
+            "RUBIEE",
+            "RUBIEE",
+            "Asesor"
+         ]
+      }
+   ]
 }

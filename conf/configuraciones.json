@@ -15,7 +15,7 @@
     "urls": {
       "rutaGEDO": "http://gedo-test.gcaba.everis.int/gedo-web/",
       "rutaEE": "http://ee-test.gcaba.everis.int/expedientes-web/",
-      "rutaEU": "http://eu-test.gcaba.everis.int/eu-web/"
+      "rutaEU": "http://eu-test-nodo2.gcaba.everis.int/eu-web/"
     }
   }
 }

@@ -9,7 +9,8 @@
   eu = EscritorioUnico.new()
   rutaArchivoConfiguracion = "../conf/configuraciones.json"
   sistema = "EU"
+  posicion = 0
   eu.ingresoSistema(rutaArchivoConfiguracion, sistema)
   eu.presionarTabAdministracion()
   eu.presionarAltaUsuario()
-  eu.completarDatosUsuario()
+  eu.completarDatosUsuario(posicion)
