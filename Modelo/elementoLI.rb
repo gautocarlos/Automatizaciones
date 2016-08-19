@@ -4,7 +4,6 @@
   require 'json'
   require 'htmlentities'
   require './elementosHTML.rb'
-  #require '../constantes.rb'
   class ElementoLI < ElementosHTML
     attr_accessor
 

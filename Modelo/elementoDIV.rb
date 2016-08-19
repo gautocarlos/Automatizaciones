@@ -4,7 +4,7 @@
   require 'json'
   require 'htmlentities'
   require './elementosHTML.rb'
-  #require '../constantes.rb'
+  #require './elementosHTMLFactory.rb'
   class ElementoDIV < ElementosHTML
     attr_accessor
 

@@ -7,5 +7,7 @@
   Z_TOOLBARBUTTON_CNT ='z-toolbarbutton-cnt'
   Z_ROWS = 'z-rows'
   Z_TEXTBOX = 'z-textbox'
+  Z_BANDBOX ='z-bandbox'
+  Z_GROUPBOX = 'z-groupbox'
   # PASAR A CONSTANTES GLOBALES
   #############################################################

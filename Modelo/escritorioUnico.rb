@@ -12,9 +12,6 @@
   class EscritorioUnico < Aplicativo
     attr_accessor
       :jsonDatosUsuario
-    def initialize()
-      
-    end
     # Getters
     def getJsonDatosUsuario()
       return @jsonDatosUsuario
@@ -53,35 +50,40 @@
     def completarDatosUsuario(posicion)
       claseTbody = Z_ROWS
       claseInputsSimples = Z_TEXTBOX
-      claseBanbox = Z_TEXTBOX
+      claseBanbox = Z_BANDBOX
       posicionTbody = 8
       # TO DO:  Debería tomar la clase y la posición del botón mediante algún tipo de parametrización
       tbody = self.getElementosHTMLFactory().getElemento('tbody')
       tbody.esperarObtenerElemento(claseTbody, posicionTbody)
       listaInputsZ_textbox = tbody.retornarElementosInputContenidos(claseInputsSimples)
-      inputsBandbox = tbody.retornarElementosInputContenidos(claseBanbox)
-      self.completarDatosUsuarioDesdeJson(posicion, listaInputsZ_textbox)
+      listaBandboxes = tbody.retornarElementosIContenidos(claseBanbox)
+      self.completarDatosUsuarioDesdeJson(posicion, listaInputsZ_textbox, listaBandboxes)
     end
     #
-    def completarDatosUsuarioDesdeJson(posicion, listaInputs)
+    def completarDatosUsuarioDesdeJson(posicion, listaInputs, listaBandboxes)
       #texto = 'texto'
       #posicionInput = 1
       # ANALIZAR EN QUE MOMENTO SE SETEA EL JSON DE DATOS DE USUARIO
-      jsonAltaUsuario = self.getParserArchivosJson().getInputsAltaUsuarioJson(posicion)
+      jsonInputsAltaUsuario = self.getParserArchivosJson().getInputsAltaUsuarioJson(posicion)
+      jsonBandboxesAltaUsuario = self.getParserArchivosJson().getBandboxesAltaUsuarioJson(posicion)
       # Iterar los valores del json
       posicionCampo = 1
       indiceElemento = 0 # Indice valor del campo
-      jsonAltaUsuario.each do |datosUsuario|
-        puts "---------------------------------------------------"
-        puts "datosUsuario.size() :: #{datosUsuario.size()}"
-        puts "---------------------------------------------------"
-        puts "datosUsuario[posicionCampo] :: #{datosUsuario[posicionCampo]}"
-        puts "---------------------------------------------------"
-        puts "datosUsuario :: #{datosUsuario}"
-        puts "---------------------------------------------------"
-        #self.getElementosHTMLFactory().getElemento('input').esperarCompletarTextoDelista(datosUsuario[indiceElemento], posicionCampo, listaInputs)
+      # Completar inputs básicos
+      jsonInputsAltaUsuario.each do |datosUsuario|
         self.getElementosHTMLFactory().getElemento('input').esperarCompletarTextoDelista(datosUsuario, posicionCampo, listaInputs)
         posicionCampo = posicionCampo + 1
-      end      
+      end
+      # Completar bandboxes
+      posicionCampo = 1
+      jsonBandboxesAltaUsuario.each do |datosUsuario|
+        #puts "---------------------------------------------------"
+        #puts "posicionCampo :: #{posicionCampo}"
+        #puts "---------------------------------------------------"
+        #puts "datosUsuario :: #{datosUsuario}"
+        #puts "---------------------------------------------------"
+        self.getElementosHTMLFactory().getElemento('i').esperarCompletarBandboxesDelista(datosUsuario, posicionCampo, listaBandboxes)
+        posicionCampo = posicionCampo + 1
+      end
     end
   end

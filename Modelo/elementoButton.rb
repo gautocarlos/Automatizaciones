@@ -4,8 +4,7 @@
   require 'json'
   require 'htmlentities'
   require './elementosHTML.rb'
-  #require '../constantes.rb'
-  #class ElementoINPUT < ElementosButon
+  #require './elementosHTMLFactory.rb'
   class ElementoButton < ElementosHTML
     attr_accessor
 

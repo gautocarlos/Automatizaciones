@@ -4,7 +4,6 @@
   require 'json'
   require 'htmlentities'
   require './elementosHTML.rb'
-  #require '../constantes.rb'
   class ElementoTBODY < ElementosHTML
     attr_accessor
 
@@ -22,5 +21,12 @@
       #
       #end
       return self.getSiMismo().text_fields(:class => clase)
+    end
+    #
+    def retornarElementosIContenidos(clase)
+      #self.getSiMismo().each do |elementoInput|
+      #
+      #end
+      return self.getSiMismo().is(:class => clase)
     end
   end

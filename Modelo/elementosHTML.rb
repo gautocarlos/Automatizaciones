@@ -3,12 +3,18 @@
   require 'logger'
   require 'json'
   require 'htmlentities'
+  #require './elementosHTMLFactory.rb'
   #require '../constantes.rb'
   class ElementosHTML
     attr_accessor
       :browser
       :siMismo
+      #:elementosHTMLFactory
     # Contructor
+    #def initialize(browser, elementosHTMLFactory)
+    #  self.setBrowser(browser)
+    #  self.setElementosHTMLFactory(elementosHTMLFactory)
+    #end
     def initialize(browser)
       self.setBrowser(browser)
     end
@@ -19,6 +25,9 @@
     def getSiMismo()
       return @siMismo
     end
+    #def getElementosHTMLFactory()
+    #  return @elementosHTMLFactory
+    #end
     # Setters
     def setBrowser(browser)
       @browser = browser
@@ -26,6 +35,9 @@
     def setSiMismo(siMismo)
       @siMismo = siMismo
     end
+    #def setElementosHTMLFactory(elementosHTMLFactory)
+    #  @elementosHTMLFactory = elementosHTMLFactory
+    #end
     # Métodos
     def realizarClick(clase)
         self.getBrowser().element(:class => clase).click
