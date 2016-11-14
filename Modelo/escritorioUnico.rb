@@ -32,9 +32,37 @@
     def presionarTabDatosPesonales(textoBoton, clase)
 
     end
-    #
+    # Solapa: REPARTICIONES, botón: Alta Repartición
+    def presionarTabUsuarios()
+      #textoBoton = TABADMINISTRACION
+      textoBoton = self.getCoder().decode(TAB_USUARIOS)
+      clase = Z_TAB_TEXT
+      self.getElementosHTMLFactory().getElemento('span').presionarBotonSpan(textoBoton, clase)
+    end
+    # Solapa: REPARTICIONES, botón: Alta Repartición
+    def presionarTabReparticiones()
+      #textoBoton = TABADMINISTRACION
+      textoBoton = self.getCoder().decode(TAB_REPARTICIONES)
+      clase = Z_TAB_TEXT
+      self.getElementosHTMLFactory().getElemento('span').presionarBotonSpan(textoBoton, clase)
+    end
+    # Solapa: USUARIOS, botón: Alta Usuario
     def presionarAltaUsuario()
       posicion = 2
+      #clase = Z_TOOLBARBUTTON_CNT
+      clase = Z_TOOLBARBUTTON_CNT
+      nombreBoton = BOTON_ALTA_USUARIO
+      #indiceFrame = 0
+      indiceFrame = nil
+      # TO DO:  Debería tomar la clase y la posición del botón mediante algún tipo de parametrización
+      #self.getElementosHTMLFactory().getElemento('div').esperarRealizarClick(posicion, clase)
+      #self.getElementosHTMLFactory().getElemento('div').esperarRealizarClickEsperar(posicion, clase)
+      # Nuevo cambio click mediante el acceso a una imagen
+      self.getElementosHTMLFactory().getElemento('imagen').presionarBotonImagen(nombreBoton, indiceFrame, clase)
+    end
+    # Solapa: REPARTICIONES, botón: Alta Usuario
+    def presionarAltaReparticion()
+      posicion = 4
       clase = Z_TOOLBARBUTTON_CNT
       # TO DO:  Debería tomar la clase y la posición del botón mediante algún tipo de parametrización
       self.getElementosHTMLFactory().getElemento('div').esperarRealizarClick(posicion, clase)
@@ -53,11 +81,15 @@
       claseBanbox = Z_BANDBOX
       posicionTbody = 8
       # TO DO:  Debería tomar la clase y la posición del botón mediante algún tipo de parametrización
-      tbody = self.getElementosHTMLFactory().getElemento('tbody')
-      tbody.esperarObtenerElemento(claseTbody, posicionTbody)
-      listaInputsZ_textbox = tbody.retornarElementosInputContenidos(claseInputsSimples)
-      listaBandboxes = tbody.retornarElementosIContenidos(claseBanbox)
-      self.completarDatosUsuarioDesdeJson(posicion, listaInputsZ_textbox, listaBandboxes)
+      begin
+        tbody = self.getElementosHTMLFactory().getElemento('tbody')
+        tbody.esperarObtenerElemento(claseTbody, posicionTbody)
+        listaInputsZ_textbox = tbody.retornarElementosInputContenidos(claseInputsSimples)
+        listaBandboxes = tbody.retornarElementosIContenidos(claseBanbox)
+        self.completarDatosUsuarioDesdeJson(posicion, listaInputsZ_textbox, listaBandboxes)
+      rescue
+        puts "Error en: completarDatosUsuario(posicion) : posicion: #{posicion}"
+      end
     end
     #
     def completarDatosUsuarioDesdeJson(posicion, listaInputs, listaBandboxes)
@@ -77,12 +109,9 @@
       # Completar bandboxes
       posicionCampo = 1
       jsonBandboxesAltaUsuario.each do |datosUsuario|
-        #puts "---------------------------------------------------"
-        #puts "posicionCampo :: #{posicionCampo}"
-        #puts "---------------------------------------------------"
-        #puts "datosUsuario :: #{datosUsuario}"
-        #puts "---------------------------------------------------"
-        self.getElementosHTMLFactory().getElemento('i').esperarCompletarBandboxesDelista(datosUsuario, posicionCampo, listaBandboxes)
+        #self.getElementosHTMLFactory().getElemento('i').esperarCompletarBandboxesDeLista(datosUsuario, posicionCampo, listaBandboxes)
+        #self.getElementosHTMLFactory().getElemento('i').esperarCompletarBandboxesDeLista(datosUsuario, posicionCampo, listaBandboxes, self.getElementosHTMLFactory())
+        self.getElementosHTMLFactory().getElemento('ElementoBandbox').esperarCompletarBandboxesDeLista(datosUsuario, posicionCampo, listaBandboxes, self.getElementosHTMLFactory())        
         posicionCampo = posicionCampo + 1
       end
     end

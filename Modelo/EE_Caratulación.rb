@@ -10,7 +10,7 @@
   require './login.rb'
   # Clases de expediente
   require './expediente.rb'
-  login = Login.new("C:/Users/cargauto/Documents/GitHub/AutomatizacionesGEDO/json/configuraciones.json","EE")
+  login = Login.new("C:/Users/cargauto/Documents/GitHub/AutomatizacionesGEDO/conf/configuraciones.json","EE")
   login.ingresar()
   #login.ingresarChrome()
   browser = login.getBrowser()

@@ -11,6 +11,14 @@
     # Métodos
     #
     #
+    def esperarObtenerElemento(clase, posicion)
+      #puts "esperarObtenerElemento(clase, posicion)"
+      Watir::Wait.until { self.getBrowser().divs(:class => clase)[posicion].exists?}
+      self.setSiMismo(self.getBrowser().divs(:class => clase)[posicion])
+      #puts "esperarObtenerElemento(clase, posicion)"
+      return self.getSiMismo()
+    end
+
     # Se realiza click sobre un DIV según su clase y su posición
     def realizarClick(posicion, clase)
       self.getBrowser().divs(:class => clase)[posicion].click

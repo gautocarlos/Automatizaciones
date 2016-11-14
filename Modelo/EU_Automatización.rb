@@ -11,6 +11,15 @@
   sistema = "EU"
   posicion = 0
   eu.ingresoSistema(rutaArchivoConfiguracion, sistema)
+
   eu.presionarTabAdministracion()
+
+  eu.presionarTabUsuarios()
   eu.presionarAltaUsuario()
   eu.completarDatosUsuario(posicion)
+
+
+  eu.presionarTabReparticiones()
+  eu.presionarAltaReparticion()
+  
+

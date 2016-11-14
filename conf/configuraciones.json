@@ -13,9 +13,9 @@
       "rutaJSON": "C:/Users/cargauto/Documents/GitHub/Automatizaciones/Automatizaciones/json/"
     },
     "urls": {
-      "rutaGEDO": "http://gedo-test.gcaba.everis.int/gedo-web/",
-      "rutaEE": "http://ee-test.gcaba.everis.int/expedientes-web/",
-      "rutaEU": "http://eu-test.nac.everis.int/eu-web/"
+      "rutaGEDO": "http://gedo-test.nac.everis.int/gedo-web/",
+      "rutaEE": "http://ee-test.nac.everis.int/expedientes-web/",
+      "rutaEU": "http://eu.nac.everis.int/eu-web/"
     }
   }
 }
